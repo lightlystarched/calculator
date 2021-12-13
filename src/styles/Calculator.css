@@ -1,0 +1,23 @@
+#root {
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+#wrapper {
+  background-color:orange;
+  width: 750px;
+}
+#wrapper output {
+  display: block;
+  background-color: black;
+  border: 1px white;
+  width: 100%;
+}
+#wrapper button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  margin: 5px;
+}

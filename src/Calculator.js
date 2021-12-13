@@ -20,7 +20,9 @@ class Calculator extends Component {
   resetCalculator = () => {
     this.setState({
       currentSum: '',
-      currentOutput: '0'
+      currentOutput: '0',
+      decimalPresent: false,
+      operationEnabled: null
     });
   }
 
@@ -70,10 +72,14 @@ class Calculator extends Component {
 
   createInput = (val) => {
     let value = val;
+    let currentOutput = this.state.currentOutput;
 
-    if (this.state.currentOutput === '0.0') {
+    if (currentOutput.substr(-2) === '.0') {
       // do transformations
-      console.log('Adding a value after the decimal point');
+      currentOutput = currentOutput.slice(0, -1);
+      this.setState({
+        currentOutput: currentOutput + value
+      });
     } else if (this.state.currentOutput === '0') {
       this.setState({
         currentOutput: value
